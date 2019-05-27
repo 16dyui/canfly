@@ -38,7 +38,7 @@ for i in range(100):
     driver.find_element_by_css_selector("#ctl00_ContentPlaceHolder1_upUpdatePanel .next>a").click()
     driver.find_element_by_css_selector("#ctl00_ContentPlaceHolder1_lbComplete2").click()
     driver.switch_to.window(driver.window_handles[1])
-    time.sleep(5)
+    time.sleep(10)
     driver.refresh()
     driver.find_element_by_css_selector("form>table:nth-of-type(2) tr:first-of-type a").click()
     t = re.findall(r"\d+", driver.find_element_by_css_selector(".msg").text)[-1]

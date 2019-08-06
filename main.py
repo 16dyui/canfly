@@ -41,7 +41,7 @@ for i in range(100):
     time.sleep(10)
     driver.refresh()
     driver.find_element_by_css_selector("form>table:nth-of-type(2) tr:first-of-type a").click()
-    t = re.findall(r"\d+", driver.find_element_by_css_selector(".msg").text)[-1]
+    t = re.findall(r"\d{9,}", driver.find_element_by_css_selector(".msg").text)
     driver.find_element_by_name("nvp_a_tr").click()
     if(i==0):
         driver.execute_script("window.open('https://points.line.me/pointcode/#/pointcode/form')")
@@ -51,5 +51,5 @@ for i in range(100):
     driver.find_element_by_name("tid").send_keys("") #LINEアカウント
     driver.find_element_by_name("tpasswd").send_keys("") #LINEパスワード
     driver.find_element_by_css_selector("[type='submit']").click()
-    driver.find_element_by_tag_name("a").click()
+    driver.find_element_by_css_selector(".MdBtn01>a").click()
     driver.switch_to.window(driver.window_handles[0])

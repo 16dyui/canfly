@@ -48,8 +48,9 @@ for i in range(100):
     driver.switch_to.window(driver.window_handles[2])
     driver.find_element_by_name("pincode").send_keys(t)
     driver.find_element_by_tag_name("button").click()
-    driver.find_element_by_name("tid").send_keys("") #LINEアカウント
-    driver.find_element_by_name("tpasswd").send_keys("") #LINEパスワード
-    driver.find_element_by_css_selector("[type='submit']").click()
+    if(i==0):
+        driver.find_element_by_name("tid").send_keys("") #LINEアカウント
+        driver.find_element_by_name("tpasswd").send_keys("") #LINEパスワード
+        driver.find_element_by_css_selector("[type='submit']").click()
     driver.find_element_by_css_selector(".MdBtn01>a").click()
     driver.switch_to.window(driver.window_handles[0])
